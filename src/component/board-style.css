@@ -1,0 +1,185 @@
+.boardList {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+.title{
+    background-color: black;
+    color: transparent;
+    -webkit-background-clip: text;
+    margin-bottom: 30px;
+}
+h2 {
+    text-align: center;
+    color: #667eea;
+}
+table {
+    width: 1024px;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+.subTitle{
+    background: linear-gradient(to right top, #12c2e975, #c471ed7a, #f64f5a8c);
+}
+.subTitle>th{
+    color: #764ba2;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.center{
+    text-align: center;
+}
+th {
+    color: #333;
+}
+tr:nth-child(even) {
+    background-color: #F9F9F9;
+}
+tr:hover {
+    background: linear-gradient(to right, rgba(135, 207, 235, 0.452), rgba(255, 192, 203, 0.479));
+    color: #667eea;
+    font-weight: 700;
+}
+table {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+/* th:nth-child(1), td:nth-child(1) {
+    width: 3%;
+    word-break: break-word;
+} */
+.textButton{
+    width: 150px;
+    height: 60px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    /* border 그라데이션 - button */
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(to right top, #12c2e975, #c471ed7a, #f64f5a8c);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+.textButton:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.textButton:active {
+    transform: scale(0.95);
+}
+
+/* BoardDetail */
+a{
+    text-decoration-line: none;
+}
+.boardDetailContainer{
+    font-family: Arial, sans-serif;
+    margin: 40px;
+}
+.boardDetailBoard button{
+    width: 150px;
+    height: 60px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    /* border 그라데이션 - button */
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(to right top, #12c2e975, #c471ed7a, #f64f5a8c);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+button>a{
+    color: white;
+}
+.boardDetailBoard button:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.boardDetailBoard button:active {
+    transform: scale(0.95);
+}
+.boardDetailContainer{
+    margin: 0 auto;
+    width: 1000px;
+    /* border 그라데이션 */
+    border: 2px solid transparent;
+    border-radius: 15px;
+    background-image: linear-gradient(#fff, #fff), linear-gradient(to right top, #12c2e975, #c471ed7a, #f64f5a8c);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+.boardDetailContainer>span{
+    padding: 20px 20px 10px 5px;
+}
+.boardDetailContainer>div{
+    margin: 20px 0 20px 0;
+}
+.bold{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* BoardRegister */
+.content{
+    width: 1024px;
+    margin: 0 auto;
+    /* border 그라데이션 */
+    border: 2px solid transparent;
+    border-radius: 15px;
+    background-image: linear-gradient(#fff, #fff), linear-gradient(to right top, #12c2e975, #c471ed7a, #f64f5a8c);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+.content>.content-box{
+    width: 100px;
+    height: 45px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 20px 0 33px;
+}
+.content>.content-box:first-child{
+    margin-left: 34px;
+}
+.content>.content-box:nth-child(2){
+    width: 250px;
+}
+.content>div>.content-box{
+    width: 800px;
+    height: 300px;
+    padding: 10px;
+    border: 1px solid pink;
+    outline: none;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 10px;
+}
+.contentContainer{
+    background-color: rgba(255, 192, 203, 0.322)
+}
+.boardRegister button{
+    width: 150px;
+    height: 60px;
+    color: white;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    /* border 그라데이션 - button */
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(to right top, #12c2e975, #c471ed7a, #f64f5a8c);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+.boardRegister button:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.boardRegister button:active {
+    transform: scale(0.95);
+}
