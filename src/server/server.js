@@ -46,7 +46,7 @@ app.get('/',(req, res) => {
 
 // 게시글 목록 가져오기
 app.get('/list', (req, res) => {
-    console.log('/list');
+    // console.log('/list');
     const sql = 'select * from board order by id desc';
     db.query(sql, (err, data)=>{
         if(!err){
@@ -55,5 +55,95 @@ app.get('/list', (req, res) => {
             console.log(err);
             res.send('전송오류');
         }
+    });
+});
+
+// 게시글 하나 가져오기 : id
+// 화면에서 서버로 요청하는 값 : request (req)
+// 서버에서 화면으로 보내주는 값 : response (res)
+// 화면에서 가져온 파라미터 추출 : req.params.id
+app.get('/view/:id', (req, res) => {
+    // 파라미터 가져오기
+    const id = req.params.id;
+    console.log(`/view/${id}`);
+    const sql = `select * from board where id = ${id}`;
+    db.query(sql, (err, data) => {
+        if(!err){
+            res.send(data);
+        }else{
+            console.log(err);
+            res.send("전송오류");
+        }
     })
-})
+});
+
+// board 등록
+app.post('/insert', (req, res) => {
+    // 파라미터 가져오기 requset.body
+    // const board = req.body;
+    // board.title
+    const { title, writer, contents } = req.body;
+
+    const sql = 'insert into board(title, writer, contents) value (?,?,?)';
+    db.query(sql, [title, writer, contents], (err, data) => {
+        if(!err){
+            // res.send("OK");
+            res.sendStatus(200); // 전송 잘됨
+        }else{
+            console.log(err);
+            res.send("전송오류");
+        }
+    })
+});
+
+// 수정-불러오기
+app.get('/modify/:id', (req, res) => {
+    // 파라미터 가져오기
+    const id = req.params.id;
+    console.log(`/modify/${id}`);
+    const sql = `select * from board where id = ${id}`;
+    db.query(sql, (err, data) => {
+        if(!err){
+            res.send(data);
+        }else{
+            console.log(err);
+            res.send("전송오류");
+        }
+    })
+});
+
+// 수정-저장
+app.post('/modify/:id', (req, res) => {
+    // 파라미터 가져오기 requset.body
+    // const board = req.body;
+    // board.title
+    const id = req.params.id;
+
+    const { title, writer, contents } = req.body;
+
+    const sql = `update board set title=?, writer=?, contents=? where id=?`;
+    db.query(sql, [title, writer, contents, id], (err, data) => {
+        if(!err){
+            // res.send("OK");
+            res.sendStatus(200); // 전송 잘됨
+        }else{
+            console.log(err);
+            res.send("전송오류");
+        }
+    })
+});
+
+// 삭제
+app.post('/delete/:id', (req, res) => {
+    const id = req.params.id;
+    const sql = `delete from board where id=${id}`;
+    db.query(sql, (err, data) => {
+        if(!err){
+            // res.send("OK");
+            res.sendStatus(200); // 전송 잘됨
+        }else{
+            console.log(err);
+            res.send("전송오류");
+        }
+    })
+});

@@ -8,10 +8,16 @@ const BoardList = () => {
     const [ boardList, setBoardList ] = useState({});
 
     // 비동기로 db에 접속하여 select로 가져오기
+    // get : 데이터 가져올 때 (생략 가능)
+    // post : 데이터를 보낼 때 (반드시 써야 함)
     const getBoardData = async () => {
-       const boards = await axios('/list');
-       console.log(boards);
-       setBoardList(boards.data); 
+        try{
+            const boards = await axios('/list');
+            console.log(boards);
+            setBoardList(boards.data); 
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     // 컴포넌트가 랜더링 될 때, 혹은 업데이트 될 때 실행되는 hooks
